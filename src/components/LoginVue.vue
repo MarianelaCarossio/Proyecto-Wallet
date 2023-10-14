@@ -19,6 +19,7 @@ export default {
   methods: {
     iniciarSesion() { 
       this.$store.commit('setUserId', this.idUsuario);
+      this.$router.push('/cartera');
     },
   },
 };

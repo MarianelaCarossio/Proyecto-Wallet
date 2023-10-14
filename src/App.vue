@@ -1,6 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Login</router-link>|
+    |<router-link to="/Cartera">Cartera</router-link>
   </nav>
   <router-view/>
 </template>
