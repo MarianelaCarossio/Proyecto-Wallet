@@ -1,6 +1,6 @@
 <template>
     <div>
-      <form @submit.prevent="nuevaCompra">
+      <form @submit.prevent="nuevaVenta">
         <label for="cryptoTipo">Criptomoneda:</label>
         <select id="cryptoTipo" v-model="cryptoCode">
           <option value="btc">Bitcoin</option>
@@ -13,7 +13,7 @@
         <input type="number" id="dinero" v-model="money" step="0.01" required>
         <label for="fecha-hora">Fecha y Hora:</label>
         <input type="datetime-local" id="fecha-hora" v-model="datetime" required>
-        <button type="submit">Guardar Compra</button>
+        <button type="submit">Guardar Venta</button>
       </form>
     </div>
   </template>
@@ -31,37 +31,34 @@
       };
     },
     methods: {
-      async nuevaCompra() {
-  
+      async nuevaVenta() {
         if (this.cryptoAmount <= 0 || this.money <= 0) {
           alert('La cantidad de criptomonedas y el monto deben ser mayores a 0.');
           return;
         }
-    
-        const datosCompra = {
+  
+        const datosVenta = {
           user_id: this.$store.state.userId,
-          action: 'purchase',
+          action: 'sale',
           crypto_code: this.cryptoCode,
           crypto_amount: this.cryptoAmount,
           money: this.money,
           datetime: this.datetime,
         };
-       
+  
         try {
-          const response = await apiClient.post('/transactions', datosCompra);
-         
-          console.log('Compra guardada:', response.data);
-        
+          const respuesta = await apiClient.post('/transactions', datosVenta);
+          console.log('Venta guardada:', respuesta.data);
         } catch (error) {
-          console.error('Error al guardar la compra:', error);
+          console.error('Error al guardar la venta:', error);
         }
-      }
-    },
+        
+      },
+    }
   };
   </script>
   
   <style scoped>
-
   div {
     max-width: 400px;
     margin: 0 auto;
@@ -102,5 +99,5 @@
     padding: 8px;
     box-sizing: border-box;
   }
-</style>
+  </style>
   
