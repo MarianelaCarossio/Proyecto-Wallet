@@ -3,6 +3,7 @@
     <h1>Bienvenid@, {{ userId }}!!!</h1>
   <div >
     <router-link class="style-link" to="/NuevaCompra">COMPRAR CRYPTO</router-link>
+    <router-link class="style-link" to="/NuevaVenta">VENDER CRYPTO</router-link>
   </div>
   </div>
 </template>
