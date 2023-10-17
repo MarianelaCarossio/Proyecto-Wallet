@@ -8,11 +8,11 @@
           <option value="eth">Ethereum</option>
         </select>
         <label for="cryptoCantidad">Cantidad:</label>
-        <input type="number" id="cryptoCantidad" v-model="cryptoAmount" step="0.0001" required>
+        <input type="number" id="cryptoCantidad" name="cryptoCantidad" v-model="cryptoAmount" step="0.0001" required>
         <label for="dinero">Dinero (ARS):</label>
-        <input type="number" id="dinero" v-model="money" step="0.01" required>
+        <input type="number" id="dinero" name="dinero" v-model="money" step="0.01" required>
         <label for="fecha-hora">Fecha y Hora:</label>
-        <input type="datetime-local" id="fecha-hora" v-model="datetime" required>
+        <input type="datetime-local" id="fecha-hora" name="fecha-hora" v-model="datetime" required>
         <button type="submit">Guardar Compra</button>
       </form>
     </div>
@@ -48,10 +48,8 @@
         };
        
         try {
-          const response = await apiClient.post('/transactions', datosCompra);
-         
-          console.log('Compra guardada:', response.data);
-        
+          const response = await apiClient.post('/transactions', datosCompra);    
+          console.log('Compra guardada:', response.data);    
         } catch (error) {
           console.error('Error al guardar la compra:', error);
         }
@@ -59,7 +57,7 @@
     },
   };
   </script>
-  
+ 
   <style scoped>
 
   div {

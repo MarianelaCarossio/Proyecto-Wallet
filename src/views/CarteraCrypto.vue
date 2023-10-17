@@ -4,6 +4,7 @@
   <div >
     <router-link class="style-link" to="/NuevaCompra">COMPRAR CRYPTO</router-link>
     <router-link class="style-link" to="/NuevaVenta">VENDER CRYPTO</router-link>
+    <router-link class="style-link" to="/Movimientos">MOVIMIENTOS</router-link>
   </div>
   </div>
 </template>
