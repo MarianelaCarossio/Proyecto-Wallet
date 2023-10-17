@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import CarteraCrypto from '../views/CarteraCrypto.vue'
 import Compra from '../components/NuevaCompra.vue';
 import Venta from '../components/NuevaVenta.vue';
+import Movimientos from '../components/HistorialMovimientos.vue'
 
 const routes = [
 
@@ -25,6 +26,11 @@ const routes = [
     path: '/NuevaVenta',
     name: 'Venta',
     component: Venta,
+  },
+  {
+    path: '/Movimientos',
+    name: 'Movimientos',
+    component: Movimientos,
   },
 ]
 
