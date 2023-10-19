@@ -4,6 +4,7 @@ import CarteraCrypto from '../views/CarteraCrypto.vue'
 import Compra from '../components/NuevaCompra.vue';
 import Venta from '../components/NuevaVenta.vue';
 import Movimientos from '../components/HistorialMovimientos.vue'
+import EstadoActual from '../components/EstadoActual.vue'
 
 const routes = [
 
@@ -31,6 +32,11 @@ const routes = [
     path: '/Movimientos',
     name: 'Movimientos',
     component: Movimientos,
+  },
+  {
+    path: '/EstadoActual',
+    name: 'EstadoActual',
+    component: EstadoActual
   },
 ]
 
