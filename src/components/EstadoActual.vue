@@ -9,7 +9,7 @@
         </tr>    
         <tr v-for="(crypto, key) in datosCrypto" :key="key">
           <td>{{ key }}</td>
-          <td>{{ crypto.amount }}</td>
+          <td>{{ crypto.cantidad }}</td>
           <td>{{ formatCurrency(crypto.money) }}</td>
         </tr>
         <tr>
