@@ -54,27 +54,27 @@ export default {
         });
 
     
-        const bitcoinPrice = await cryptoApiClient.getDetails('btc');
-        const ethereumPrice = await cryptoApiClient.getDetails('eth');
-        const usdcPrice = await cryptoApiClient.getDetails('usdc');
+        const precioBitcoin = await cryptoApiClient.getDetails('btc');
+        const precioEthereum = await cryptoApiClient.getDetails('eth');
+        const precioUsdc = await cryptoApiClient.getDetails('usdc');
 
        
         const cryptoValues = {};
         for (const cryptoTipo in cryptoCantidad) {
           const cantidad = cryptoCantidad[cryptoTipo];
-          let price = 0;
+          let precio = 0;
 
           if (cryptoTipo === 'btc') {
-            price = bitcoinPrice.ask;
+            precio = precioBitcoin.ask;
           } else if (cryptoTipo === 'eth') {
-            price = ethereumPrice.ask;
+            precio = precioEthereum.ask;
           } else if (cryptoTipo === 'usdc') {
-            price = usdcPrice.ask;
+            precio = precioUsdc.ask;
           }
 
           cryptoValues[cryptoTipo] = {
             cantidad,
-            money: cantidad * price,
+            money: cantidad * precio,
           };
         }
 
