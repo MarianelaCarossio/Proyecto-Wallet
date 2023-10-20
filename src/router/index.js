@@ -5,6 +5,7 @@ import Compra from '../components/NuevaCompra.vue';
 import Venta from '../components/NuevaVenta.vue';
 import Movimientos from '../components/HistorialMovimientos.vue'
 import EstadoActual from '../components/EstadoActual.vue'
+import AnalisisInversiones from '../components/AnalisisInversiones.vue'
 
 const routes = [
 
@@ -38,6 +39,12 @@ const routes = [
     name: 'EstadoActual',
     component: EstadoActual
   },
+  {
+    path: '/AnalisisInversiones',
+    name: 'AnalisiInversiones',
+    component: AnalisisInversiones
+  },
+
 ]
 
 const router = createRouter({
